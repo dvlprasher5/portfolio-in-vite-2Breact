@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
-import { Float, Text3D, Center } from '@react-three/drei';
+import { Float, Box } from '@react-three/drei';
 import { Suspense } from 'react';
 
 const skills = [
@@ -35,6 +35,22 @@ function SkillSphere({ skill, index }: { skill: typeof skills[0], index: number 
   );
 }
 
+function CentralCube() {
+  return (
+    <Float speed={1.5} rotationIntensity={0.8} floatIntensity={2}>
+      <Box args={[1, 1, 1]}>
+        <meshStandardMaterial 
+          color="#8b5cf6" 
+          emissive="#8b5cf6"
+          emissiveIntensity={0.3}
+          transparent
+          opacity={0.7}
+        />
+      </Box>
+    </Float>
+  );
+}
+
 function Skills3D() {
   return (
     <Canvas camera={{ position: [0, 0, 8], fov: 75 }}>
@@ -46,28 +62,7 @@ function Skills3D() {
           <SkillSphere key={skill.name} skill={skill} index={index} />
         ))}
         
-        <Center>
-          <Float speed={1.5} rotationIntensity={0.8} floatIntensity={2}>
-            <Text3D
-              font="/fonts/Inter_Bold.json"
-              size={0.5}
-              height={0.1}
-              curveSegments={12}
-              bevelEnabled
-              bevelThickness={0.02}
-              bevelSize={0.02}
-              bevelOffset={0}
-              bevelSegments={5}
-            >
-              SKILLS
-              <meshStandardMaterial 
-                color="#8b5cf6" 
-                emissive="#8b5cf6"
-                emissiveIntensity={0.3}
-              />
-            </Text3D>
-          </Float>
-        </Center>
+        <CentralCube />
       </Suspense>
     </Canvas>
   );
@@ -169,8 +164,14 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
-            className="h-96 lg:h-[500px]"
+            className="h-96 lg:h-[500px] relative"
           >
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center mb-8 z-10 relative">
+                <h3 className="text-4xl font-bold text-gradient mb-2">SKILLS</h3>
+                <p className="text-foreground/60">Interactive 3D Visualization</p>
+              </div>
+            </div>
             <Skills3D />
           </motion.div>
         </div>
