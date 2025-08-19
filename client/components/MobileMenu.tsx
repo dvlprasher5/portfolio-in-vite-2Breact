@@ -1,11 +1,11 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 
 const navItems = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Contact', href: '#contact' },
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Projects", href: "#projects" },
+  { name: "Contact", href: "#contact" },
 ];
 
 interface MobileMenuProps {
@@ -15,10 +15,10 @@ interface MobileMenuProps {
 
 export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const scrollToSection = (href: string) => {
-    const elementId = href.replace('#', '');
+    const elementId = href.replace("#", "");
     const element = document.getElementById(elementId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
       onClose();
     }
   };
@@ -36,18 +36,18 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             transition={{ duration: 0.3 }}
             onClick={onClose}
           />
-          
+
           {/* Menu */}
           <motion.div
             className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-card border-l border-border z-50 overflow-hidden"
-            initial={{ x: '100%' }}
+            initial={{ x: "100%" }}
             animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
           >
             {/* Background Effect */}
             <div className="absolute inset-0 bg-gradient-to-br from-neon-cyan/5 via-neon-purple/5 to-neon-pink/5" />
-            
+
             <div className="relative z-10 p-6 h-full flex flex-col">
               {/* Header */}
               <div className="flex items-center justify-between mb-8">
@@ -61,7 +61,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   ✕
                 </motion.button>
               </div>
-              
+
               {/* Navigation Items */}
               <nav className="flex-1">
                 <div className="space-y-4">
@@ -83,7 +83,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   ))}
                 </div>
               </nav>
-              
+
               {/* Contact Info */}
               <motion.div
                 className="mt-8 space-y-4"
@@ -91,7 +91,9 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
               >
-                <div className="text-sm text-foreground/60 mb-4">Get in touch</div>
+                <div className="text-sm text-foreground/60 mb-4">
+                  Get in touch
+                </div>
                 <div className="flex gap-4">
                   <motion.a
                     href="mailto:ashery@satatechnologies.com"
@@ -110,7 +112,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                     LinkedIn
                   </motion.a>
                 </div>
-                
+
                 <div className="text-xs text-foreground/40 text-center mt-4">
                   Frontend Developer • 3+ Years Experience
                 </div>

@@ -72,9 +72,10 @@ export default {
         },
       },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'mesh-gradient': 'linear-gradient(135deg, var(--tw-gradient-stops))',
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "mesh-gradient": "linear-gradient(135deg, var(--tw-gradient-stops))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -83,16 +84,19 @@ export default {
       },
       keyframes: {
         float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-20px)" },
         },
         glow: {
-          '0%': { boxShadow: '0 0 20px hsl(var(--neon-cyan))' },
-          '100%': { boxShadow: '0 0 40px hsl(var(--neon-purple)), 0 0 60px hsl(var(--neon-pink))' },
+          "0%": { boxShadow: "0 0 20px hsl(var(--neon-cyan))" },
+          "100%": {
+            boxShadow:
+              "0 0 40px hsl(var(--neon-purple)), 0 0 60px hsl(var(--neon-pink))",
+          },
         },
         rotateY: {
-          '0%': { transform: 'rotateY(0deg)' },
-          '100%': { transform: 'rotateY(360deg)' },
+          "0%": { transform: "rotateY(0deg)" },
+          "100%": { transform: "rotateY(360deg)" },
         },
         "accordion-down": {
           from: {
@@ -112,11 +116,11 @@ export default {
         },
       },
       animation: {
-        'float': 'float 6s ease-in-out infinite',
-        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'glow': 'glow 2s ease-in-out infinite alternate',
-        'rotate-y': 'rotateY 10s linear infinite',
-        'bounce-slow': 'bounce 3s infinite',
+        float: "float 6s ease-in-out infinite",
+        "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        glow: "glow 2s ease-in-out infinite alternate",
+        "rotate-y": "rotateY 10s linear infinite",
+        "bounce-slow": "bounce 3s infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },

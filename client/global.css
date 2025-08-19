@@ -119,7 +119,9 @@
 
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1;
   }
 
   html {
@@ -141,7 +143,8 @@
 
   /* Touch targets for mobile */
   @media (pointer: coarse) {
-    button, a {
+    button,
+    a {
       min-height: 44px;
       min-width: 44px;
     }
@@ -238,7 +241,8 @@
   }
 
   @keyframes gradient-shift {
-    0%, 100% {
+    0%,
+    100% {
       background-position: 0% 50%;
     }
     50% {

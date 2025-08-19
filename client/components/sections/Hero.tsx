@@ -1,17 +1,20 @@
-import { motion } from 'framer-motion';
-import Scene3D from '../3d/Scene3D';
+import { motion } from "framer-motion";
+import Scene3D from "../3d/Scene3D";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* Background 3D Scene */}
       <div className="absolute inset-0 z-0">
         <Scene3D />
       </div>
-      
+
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-background/50 via-transparent to-background/80 z-10" />
-      
+
       {/* Content */}
       <div className="relative z-20 container mx-auto px-4 text-center">
         <motion.div
@@ -31,17 +34,18 @@ export default function Hero() {
               Frontend Developer
             </span>
           </motion.h1>
-          
+
           <motion.p
             className="text-xl md:text-2xl text-foreground/70 mb-8 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            Crafting immersive digital experiences with{' '}
-            <span className="text-neon-cyan">3+ years</span> of expertise in modern web technologies
+            Crafting immersive digital experiences with{" "}
+            <span className="text-neon-cyan">3+ years</span> of expertise in
+            modern web technologies
           </motion.p>
-          
+
           <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             initial={{ opacity: 0, y: 30 }}
@@ -50,12 +54,16 @@ export default function Hero() {
           >
             <motion.button
               className="glass-effect px-8 py-4 rounded-xl text-lg font-semibold text-foreground hover:text-neon-cyan transition-all border border-neon-purple/30 hover:border-neon-cyan/50 group"
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
-                boxShadow: '0 0 30px hsl(var(--neon-cyan))'
+                boxShadow: "0 0 30px hsl(var(--neon-cyan))",
               }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() =>
+                document
+                  .getElementById("projects")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
             >
               <span className="flex items-center gap-2">
                 View My Work
@@ -67,20 +75,24 @@ export default function Hero() {
                 </motion.span>
               </span>
             </motion.button>
-            
+
             <motion.button
               className="px-8 py-4 rounded-xl text-lg font-semibold bg-gradient-to-r from-neon-purple to-neon-pink text-white hover:from-neon-cyan hover:to-neon-purple transition-all shadow-lg hover:shadow-xl"
-              whileHover={{ 
+              whileHover={{
                 scale: 1.05,
-                boxShadow: '0 0 30px hsl(var(--neon-purple))'
+                boxShadow: "0 0 30px hsl(var(--neon-purple))",
               }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() =>
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" })
+              }
             >
               Get In Touch
             </motion.button>
           </motion.div>
-          
+
           <motion.div
             className="mt-12 flex justify-center items-center gap-8"
             initial={{ opacity: 0 }}
@@ -94,7 +106,9 @@ export default function Hero() {
             <div className="w-px h-12 bg-border" />
             <div className="text-center">
               <div className="text-3xl font-bold text-neon-purple">50+</div>
-              <div className="text-sm text-foreground/60">Projects Completed</div>
+              <div className="text-sm text-foreground/60">
+                Projects Completed
+              </div>
             </div>
             <div className="w-px h-12 bg-border" />
             <div className="text-center">
@@ -104,7 +118,7 @@ export default function Hero() {
           </motion.div>
         </motion.div>
       </div>
-      
+
       {/* Scroll Indicator */}
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
